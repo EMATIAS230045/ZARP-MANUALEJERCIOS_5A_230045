@@ -1,0 +1,9 @@
+/* Estilos del footer */
+footer {
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: #3f51b5; /* Color primario de Angular Material */
+  color: white; /* Texto en blanco */
+  padding: 16px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte superior */
+}

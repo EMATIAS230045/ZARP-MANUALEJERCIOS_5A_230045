@@ -1,0 +1,29 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>year</th>
+        <th>brand</th>
+        <th>price</th>
+        <th>transmission</th>
+        <th>mileage</th>
+        <th>fuelType</th>
+        <th>tax</th>
+        <th>mpg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of data">
+        <td>{{ person.id }}</td>
+        <td>{{ person.year }}</td>
+        <td>{{ person.brand }}</td>
+        <td>{{person.price}}</td>
+        <td>{{person.transmission}}</td>
+        <td>{{person.mileage}}</td>
+        <td>{{person.fuelType}}</td>
+        <td>{{person.tax}}</td>
+        <td>{{person.mpg}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

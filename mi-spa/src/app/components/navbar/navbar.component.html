@@ -1,0 +1,71 @@
+<mat-toolbar color="primary" class="navbar" *ngIf="isLoggedIn">
+  <!-- Botón para abrir/cerrar Sidebar -->
+  <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="navbar-title">Mi Aplicación</span>
+
+  <span class="spacer"></span>
+
+  <!-- Botones de prácticas centrados -->
+  <div class="practices-container">
+    <button mat-button [matMenuTriggerFor]="menu1">Prácticas</button>
+    <button mat-button [matMenuTriggerFor]="menu2">Tareas</button>
+    <button mat-button [matMenuTriggerFor]="menu3">Examen Practico</button>
+  </div>
+
+  <!-- Menú de Prácticas -->
+  <mat-menu #menu1="matMenu">
+    <button mat-menu-item (click)="selectOption('practica 1')">Práctica 1</button>
+    <button mat-menu-item (click)="selectOption('practica 2')">Práctica 2</button>
+    <button mat-menu-item (click)="selectOption('practica 3')">Práctica 3</button>
+    <button mat-menu-item (click)="selectOption('practica 4')">Práctica 4</button>
+    <button mat-menu-item (click)="selectOption('practica 5')">Práctica 5</button>
+    <button mat-menu-item (click)="selectOption('practica 6')">Práctica 6</button>
+    <button mat-menu-item (click)="selectOption('practica 7')">Práctica 7</button>
+    <button mat-menu-item (click)="selectOption('practica 8')">Práctica 8</button>
+    <button mat-menu-item (click)="selectOption('practica 9')">Práctica 9</button>
+    <button mat-menu-item (click)="selectOption('practica 10')">Práctica 10</button>
+    <button mat-menu-item (click)="selectOption('practica 11')">Práctica 11</button>
+    <button mat-menu-item (click)="selectOption('practica 12')">Práctica 12</button>
+  </mat-menu>
+
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item (click)="selectOption('grafica 1')">Grafica 1</button>
+    <button mat-menu-item (click)="selectOption('grafica 2')">Grafica 2</button>
+    <button mat-menu-item (click)="selectOption('tabla 1')">Tabla 1</button>
+    <button mat-menu-item (click)="selectOption('tabla 2')">Tabla 2</button>
+    <button mat-menu-item (click)="selectOption('tabla Api')">Tabla 3</button>
+    <button mat-menu-item (click)="selectOption('tabla 4')">Tabla 4</button>
+    <button mat-menu-item (click)="selectOption('tabla 5')">tabla 5</button>
+  </mat-menu>
+
+  <mat-menu #menu3="matMenu">
+    <button mat-menu-item>Examen práctico</button>
+    <button mat-menu-item>Tareas</button>
+  </mat-menu>
+
+  <!-- Foto de perfil y opciones de usuario -->
+  <img src="https://cdn0.bioenciclopedia.com/es/posts/0/2/0/zorro_20_600.jpg" 
+       alt="Foto de perfil" class="navbar-img">
+
+  <button mat-icon-button [matMenuTriggerFor]="userMenu" class="more-button">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item routerLink="/profile">
+      <mat-icon>account_circle</mat-icon>
+      <span>Mi Perfil</span>
+    </button>
+    <button mat-menu-item routerLink="/notifications">
+      <mat-icon>notifications</mat-icon>
+      <span>Notificaciones</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Cerrar Sesión</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

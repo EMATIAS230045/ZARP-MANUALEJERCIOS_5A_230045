@@ -1,0 +1,11 @@
+<div *ngIf="selectedOption">
+  <h3>{{ selectedOption }}</h3>
+  <div>
+    <p><strong>Unidad:</strong> {{ getSidebarContent().unidad }}</p>
+    <p><strong>Objetivo:</strong> {{ getSidebarContent().objetivo }}</p>
+    <p><strong>Descripción:</strong></p>
+    <div class="description-box">
+      <p class="description">{{ getSidebarContent().descripcion }}</p>
+    </div>
+  </div>
+</div>

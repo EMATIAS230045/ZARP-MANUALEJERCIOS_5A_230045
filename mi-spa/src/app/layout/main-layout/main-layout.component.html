@@ -1,0 +1,37 @@
+<body class="no-scroll">
+  <!-- Navbar con inicio de sesión y cierre -->
+   <!-- Evento que recibe la opción seleccionada -->
+  <app-navbar
+    [isLoggedIn]="isLoggedIn"
+    (logoutEvent)="onLogout()"
+    (toggleSidebar)="toggleSidenav()"
+    (optionSelected)="onOptionSelected($event)"  
+  ></app-navbar>
+
+  <!-- Evento que se activa cuando se selecciona una opción -->
+  <mat-sidenav-container class="app-container">
+    <!-- Sidebar: Se mantiene en el DOM pero se oculta si el usuario no está logueado -->
+    <mat-sidenav #sidenav mode="side" opened>
+      <app-sidebar *ngIf="isLoggedIn" [selectedOption]="selectedOption"></app-sidebar> <!-- Pasamos la opción seleccionada al Sidebar -->
+      <div *ngIf="!isLoggedIn" class="sidebar-placeholder">
+        Inicia sesión para ver el menú
+      </div>
+    </mat-sidenav>
+
+    <!-- Contenido principal -->
+    <mat-sidenav-content class="content-wrapper">
+      <!-- Pasamos la opción seleccionada al contenido -->
+      <app-content
+        [selectedOption]="selectedOption"  
+        [isLoggedIn]="isLoggedIn"
+        (loginEvent)="onLogin()"
+      ></app-content>
+      <app-breadcrumb></app-breadcrumb>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- Footer -->
+  <footer class="footer-container">
+    <app-footer></app-footer>
+  </footer>
+</body>

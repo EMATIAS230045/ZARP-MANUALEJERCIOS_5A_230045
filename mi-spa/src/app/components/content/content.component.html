@@ -1,0 +1,63 @@
+<div class="login-container">
+  <!-- Login -->
+  <ng-container *ngIf="!isLoggedIn">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Iniciar Sesión</mat-card-title>
+        <mat-card-subtitle>Ingresa tus credenciales para acceder</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form (ngSubmit)="login()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="username"
+              name="username"
+              placeholder="Ingresa tu nombre de usuario"
+              required
+            />
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              type="password"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Ingresa tu contraseña"
+              required
+            />
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit" class="full-width">
+            <mat-icon>login</mat-icon>
+            Iniciar Sesión
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <!-- Contenido cuando el usuario está logueado -->
+  <ng-container *ngIf="isLoggedIn">
+    <div class="content-container">
+      <!-- Texto del código -->
+      <div class="text-container">
+        <h1>{{ textContent }}</h1>
+      </div>
+
+      <!-- Componente dinámico -->
+      <div class="image-container">
+        <ng-container *ngIf="currentComponent">
+          <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+        </ng-container>      
+      </div>
+    </div>
+  </ng-container>
+</div>
