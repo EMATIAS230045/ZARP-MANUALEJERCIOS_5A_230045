@@ -1,0 +1,16 @@
+/* Estilos para el contenedor del gráfico */
+#chartdiv {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos generales para el contenedor */
+  .container {
+    margin: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+  }
+  

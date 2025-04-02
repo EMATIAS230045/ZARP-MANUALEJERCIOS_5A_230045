@@ -26,6 +26,9 @@ import { ZeroConfigComponent } from '../zero-config/zero-config.component';
 import { DatatableComponent } from '../datatable/datatable.component';
 import { JsonComponent } from '../json/json.component';
 import { WithAjaxCallbackComponent } from '../with-ajax-callback/with-ajax-callback.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { CarrosComponent } from '../carros/carros.component';
+import { AmchartComponent } from '../amchart/amchart.component';
 
 @Component({
   selector: 'app-content',
@@ -128,6 +131,18 @@ export class ContentComponent {
         case 'tabla Api':
         this.textContent = 'Tabla api';
         this.currentComponent = WithAjaxCallbackComponent;
+        break;
+        case 'grafica 3':
+        this.textContent = 'Grafica con datos de datatables';
+        this.currentComponent = DashboardComponent;
+        break;
+        case 'grafica 4':
+        this.textContent = 'Grafica con datos de datatables';
+        this.currentComponent = CarrosComponent;
+        break;
+        case 'grafica 5':
+        this.textContent = 'Grafica con API';
+        this.currentComponent = AmchartComponent;
         break;
 
       default:
