@@ -47,6 +47,12 @@ export class SidebarComponent {
       return { unidad: 'Unidad 2', objetivo: 'Crear grafica sensilla', descripcion: 'Los gráficos interactivos son esenciales para visualizar datos en aplicaciones modernas. amCharts, una biblioteca de visualización de datos flexible y potente, se integra perfectamente con Angular para crear gráficos dinámicos y personalizables. En este tutorial, exploraremos cómo configurar amCharts 5 en un proyecto Angular y crear un gráfico básico, evitando los errores más comunes.' };
       case 'grafica 2':
       return { unidad: 'Unidad 2', objetivo: 'Gráfico de barras apiladas con valores negativos', descripcion: 'Grafia con valores contrarios de actividad de tarea de clase' };
+      case 'grafica 3':
+      return { unidad: 'Unidad 2', objetivo: 'Gráfico de barras de datos json', descripcion: 'Grafia con valores que utilizan datos de un documento tipo json' };
+      case 'grafica 4':
+      return { unidad: 'Unidad 2', objetivo: 'Gráfico de barras con datos de carros de un data set', descripcion: 'Grafia con valores contrarios de automoviles del data set asignado para las tablas' };
+      case 'grafica 5':
+      return { unidad: 'Unidad 2', objetivo: 'Gráfico de barras que responde a una api ', descripcion: 'Grafia con valores obtenidos desde mongo db' };
       default:
         return { unidad: '2', objetivo: 'Graficas Amschart', descripcion: 'session de las graficas' };
     }
